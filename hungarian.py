@@ -100,12 +100,50 @@ df_final['target'] = y
 # STREAMLIT
 st.set_page_config(
   page_title = "Hungarian Heart Disease",
-  page_icon = ":heart:"
+  page_icon = ":heart:",
+  layout="wide",
+  initial_sidebar_state="expanded",
 )
 
 st.title("Hungarian Heart Disease")
 st.write(f"**_Model's Accuracy_** :  :green[**{accuracy}**]% (:red[_Do not copy outright_])")
 st.write("")
+
+medical_dark_theme = """
+    <style>
+    body {
+        background-color: #1a1a1a; /* Warna latar belakang */
+        color: #ffffff; /* Warna teks */
+        font-family: Arial, sans-serif; /* Jenis huruf */
+    }
+    .stButton>button {
+        background-color: #ff4d4d; /* Warna tombol */
+        color: #ffffff; /* Warna teks tombol */
+    }
+    .stTextInput>div>input {
+        background-color: #333333; /* Warna latar belakang input */
+        color: #ffffff; /* Warna teks input */
+    }
+    .stSelectbox>div>div>div {
+        background-color: #333333; /* Warna latar belakang select box */
+        color: #ffffff; /* Warna teks select box */
+    }
+    .stDataFrame>div>div {
+        background-color: #333333; /* Warna latar belakang tabel */
+        color: #ffffff; /* Warna teks tabel */
+    }
+    .css-1aumxhk {
+        background-color: #333333; /* Warna latar belakang sidebar */
+        color: #ffffff; /* Warna teks sidebar */
+    }
+    .st-cq {
+        color: #ffffff; /* Warna teks judul */
+    }
+    </style>
+"""
+
+# Terapkan tema gelap medis ke aplikasi
+st.markdown(medical_dark_theme, unsafe_allow_html=True)
 
 tab1, tab2 = st.tabs(["Single-predict", "Multi-predict"])
 
